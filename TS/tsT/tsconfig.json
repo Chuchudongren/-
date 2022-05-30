@@ -1,0 +1,77 @@
+{
+/* 
+    tsconfig.json 是 ts编译器的配置文件，ts编译器可以根据它的信息来对代码进行编译
+    include  用来指令那些ts文件需要被编译 
+        **代表任意目录  *代表任意文件
+    exclude  表示不包含的ts文件
+    extends  定义被继承的配置文件
+    files 指定被编译文件的列表，只要需要编译的文件少时才会用到
+
+    compilerOptions 编译器的选项 
+        项目选项：  target 指定编译的ES版本
+                    lib
+                    module
+
+*/
+
+ "include": [
+     "./src/**/*",
+ ],
+ "exclude": [
+    "",
+ ],
+    //  编译器的选项
+ "compilerOptions": {
+    // 编译的ES的版本 
+    // "ES3", "ES5", "ES6", "ES2015", "ES2016", "ES2017", "ES2018", "ES2019", "ES2020", "ES2021", "ES2022", "ESNext"
+    "target": "ES6",
+    // 模块化的规范   推荐ES2015  === ES6
+    // 'none', 'commonjs', 'amd', 'system', 'umd', 'es6', 'es2015', 'es2020', 'es2022', 'esnext', 'node16', 'nodenext'。
+    "module": "none",
+    // 表示项目中要使用的库
+    // Value is not accepted. Valid values: 
+    // "ES5", "ES6", "ES2015", "ES2015.Collection", "ES2015.Core", "ES2015.Generator", 
+    // "ES2015.Iterable", "ES2015.Promise", "ES2015.Proxy", "ES2015.Reflect", 
+    // "ES2015.Symbol.WellKnown", "ES2015.Symbol", "ES2016", "ES2016.Array.Include", "ES2017", "ES2017.Intl", 
+    // "ES2017.Object", "ES2017.SharedMemory", "ES2017.String", "ES2017.TypedArrays", "ES2018", "ES2018.AsyncGenerator",
+    //  "ES2018.AsyncIterable", "ES2018.Intl", "ES2018.Promise", "ES2018.Regexp", "ES2019", "ES2019.Array", "ES2019.Object",
+    //  "ES2019.String", "ES2019.Symbol", "ES2020", "ES2020.BigInt", "ES2020.Promise", "ES2020.String", "ES2020.Symbol.WellKnown", 
+    // "ESNext", "ESNext.Array", "ESNext.AsyncIterable", "ESNext.BigInt", "ESNext.Intl", "ESNext.Promise", "ESNext.String", "ESNext.Symbol", 
+    // "DOM", "DOM.Iterable", "ScriptHost", "WebWorker", "WebWorker.ImportScripts", "Webworker.Iterable", "ES7", "ES2021", "ES2020.SharedMemory",
+    //  "ES2020.Intl", "ES2021.Promise", "ES2021.String", "ES2021.WeakRef", "ESNext.WeakRef", "es2021.intl", "ES2022", "ES2022.Array", "ES2022.Error",
+    //  "ES2022.Intl", "ES2022.Object", "ES2022.String".
+
+    // "lib": ["DOM"],
+    // outDir 用来指定编译后文件的目录
+    "outDir":"./dist",
+    // outFile 所有全局作用域内的代码合并为 一 个文件
+    /* 
+        如果被指定，所有 全局 （非模块） 文件将被合并到指定的单个输出文件中。
+        如果 module 为 system 或 amd，所有模块文件也将在所有全局内容之后被合并到这个文件中。
+        注：除非 module 是 none ,system 或 amd， 否则不能使用 outFile。
+        这个选项 不能 用来打包 CommonJS 或 ES6 模块。
+    */
+    // "outFile": "./app/index.js",
+    // allowJs  是否编译目录中的js文件 默认是false
+    "allowJs": true,
+    // checkJS  是否检查js代码是否符合语法规范，默认是false
+    "checkJs": true,
+    // removeComments 是否 移除注释 默认是false
+    "removeComments": false,
+    // noEmit 不生成编译后的文件  
+    "noEmit": false,
+    // noEmitOnError 当有错误时  不生成编译后的文件
+    "noEmitOnError": false,
+    // strict 严格模式的总开关 一般 true
+    "strict": false,
+    // alwaysStrict 设置编译后的文件是否开启严格模式
+    // 代码里导入 模块代码  会自动进入严格模式，不会在头部 生成 "use strict"
+    "alwaysStrict": false,
+    //  noImplicitAny 是否 设置 不允许隐式的any类型 
+    "noImplicitAny": false,
+    // noImplicitThis 是否 设置 不允许不明确类型的this
+    "noImplicitThis": false,
+    // strictNullChecks 严格检查空值 检测可能存在空值的变量
+    "strictNullChecks": false,
+ }  
+}
